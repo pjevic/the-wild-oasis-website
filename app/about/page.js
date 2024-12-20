@@ -1,4 +1,4 @@
 /** @format */
 export default function Page() {
-  return <h1>ABOUT PAGE</h1>;
+  return <h1>About The Wild Oasis</h1>;
 }

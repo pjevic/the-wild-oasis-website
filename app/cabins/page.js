@@ -1,5 +1,9 @@
 /** @format */
 
 export default function Page() {
-  return <h1>CABINS PAGE</h1>;
+  return (
+    <div>
+      <h1>Cabins page</h1>
+    </div>
+  );
 }
