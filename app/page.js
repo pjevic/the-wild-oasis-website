@@ -14,6 +14,7 @@ export default function Page() {
         src={bg}
         fill
         className="object-cover object-top"
+        placeholder="blur"
         alt="Mountains and forests with two cabins"
       />
 
