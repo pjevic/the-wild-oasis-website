@@ -7,7 +7,7 @@ import logo from "@/public/logo.png";
 
 function Logo() {
   return (
-    <Link href="/" className="flex items-center gap-4 z-10">
+    <Link href="/" className="flex items-center gap-4 z-10 ">
       <Image
         src={logo}
         width="60"
@@ -15,7 +15,9 @@ function Logo() {
         quality={100}
         alt="The Wild Oasis logo"
       />
-      <span className="text-xl font-semibold text-primary-100">The Wild Oasis</span>
+      <span className="text-xl font-semibold text-primary-100  hover:text-accent-400 transition-colors">
+        The Wild Oasis
+      </span>
     </Link>
   );
 }
