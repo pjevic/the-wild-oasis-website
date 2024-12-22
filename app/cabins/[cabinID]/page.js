@@ -5,13 +5,15 @@ import { EyeSlashIcon, MapPinIcon, UsersIcon } from "@heroicons/react/24/solid";
 
 import { getCabin } from "@/app/_lib/data-service";
 
+export async function generateMetadata({ params }) {
+  const { name } = await getCabin(params.cabinID);
+  return { title: `Cabin ${name}` };
+}
+
 export default async function Page({ params }) {
   const cabin = await getCabin(params.cabinID);
-  console.log(cabin);
-  console.log(params, params.cabinID);
-  const { id, name, maxCapacity, regularPrice, discount, image, description } = cabin;
 
-  console.log(params);
+  const { id, name, maxCapacity, regularPrice, discount, image, description } = cabin;
 
   return (
     <div className="max-w-6xl mx-auto mt-8">
