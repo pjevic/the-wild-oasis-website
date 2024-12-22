@@ -13,15 +13,13 @@ export async function getCountries() {
 }
 
 // *************** SUPABASE ***************
+// ............... GET
 
 export const getCabins = async function () {
   const { data, error } = await supabase
     .from("cabins")
     .select("id, name, maxCapacity, regularPrice, discount, image")
-    .order("name");
-
-  // For testing
-  // await new Promise((res) => setTimeout(res, 2000));
+    .order("name", { ascending: true });
 
   if (error) {
     console.error(error);
@@ -30,3 +28,22 @@ export const getCabins = async function () {
 
   return data;
 };
+
+export async function getCabin(id) {
+  const { data, error } = await supabase
+    .from("cabins")
+    .select("*")
+    .eq("id", id)
+    .single();
+
+  if (error) {
+    console.error("Error fetching cabin:", error);
+    return null;
+  }
+
+  console.log(data);
+  return data;
+}
+
+// For testing
+// await new Promise((res) => setTimeout(res, 2000));
