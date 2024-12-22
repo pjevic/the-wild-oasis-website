@@ -1,5 +1,7 @@
 /** @format */
 
+import { supabase } from "./supabase";
+
 export async function getCountries() {
   try {
     const res = await fetch("https://restcountries.com/v2/all?fields=name,flag");
