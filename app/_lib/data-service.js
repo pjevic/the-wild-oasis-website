@@ -42,7 +42,6 @@ export async function getCabin(id) {
     notFound();
   }
 
-  console.log(data);
   return data;
 }
 
