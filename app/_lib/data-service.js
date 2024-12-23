@@ -1,5 +1,6 @@
 /** @format */
 
+import { notFound } from "next/navigation";
 import { supabase } from "./supabase";
 
 export async function getCountries() {
@@ -37,8 +38,8 @@ export async function getCabin(id) {
     .single();
 
   if (error) {
-    console.error("Error fetching cabin:", error);
-    return null;
+    console.error(error);
+    notFound();
   }
 
   console.log(data);
