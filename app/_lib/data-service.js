@@ -60,8 +60,6 @@ export async function getBookedDatesByCabinId(cabinId) {
     .eq("cabinID", cabinId)
     .or(`startDate.gte.${today},status.eq.checked-in`);
 
-  console.log(data);
-
   if (error) {
     console.error(error);
     throw new Error("Bookings could not get loaded");
