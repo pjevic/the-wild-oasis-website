@@ -113,5 +113,22 @@ export async function createGuest(newGuest) {
   return data;
 }
 
+// ............... UPDATE
+
+export async function updateGuest(id, updatedFields) {
+  const { data, error } = await supabase
+    .from("guests")
+    .update(updatedFields)
+    .eq("id", id)
+    .select()
+    .single();
+
+  if (error) {
+    console.error(error);
+    throw new Error("Guest could not be updated");
+  }
+  return data;
+}
+
 // For testing
 // await new Promise((res) => setTimeout(res, 2000));
