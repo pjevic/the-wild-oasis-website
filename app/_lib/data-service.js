@@ -77,6 +77,21 @@ export async function getBookings(guestId) {
   return data;
 }
 
+export async function getBooking(id) {
+  const { data, error, count } = await supabase
+    .from("bookings")
+    .select("*")
+    .eq("id", id)
+    .single();
+
+  if (error) {
+    console.error(error);
+    throw new Error("Booking could not get loaded");
+  }
+
+  return data;
+}
+
 export async function getBookedDatesByCabinId(cabinId) {
   let today = new Date();
   today.setUTCHours(0, 0, 0, 0);
@@ -146,6 +161,21 @@ export async function updateGuest(id, updatedFields) {
     throw new Error("Guest could not be updated");
   }
 
+  return data;
+}
+
+export async function updateBooking(id, updatedFields) {
+  const { data, error } = await supabase
+    .from("bookings")
+    .update(updatedFields)
+    .eq("id", id)
+    .select()
+    .single();
+
+  if (error) {
+    console.error(error);
+    throw new Error("Booking could not be updated");
+  }
   return data;
 }
 
