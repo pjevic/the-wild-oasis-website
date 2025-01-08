@@ -16,7 +16,7 @@ export const metadata = {
     template: "%s / The Wild Oasis",
     default: "Welcome / The Wild Oasis",
   },
-  // Each page can have its own description
+
   description:
     "Luxurious cabin hotel, located in the heart ot the Italian Dolomites, surrounder by beautiful mountiains and dark forests",
 };

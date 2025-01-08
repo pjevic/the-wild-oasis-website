@@ -1,7 +1,5 @@
 /** @format */
 
-import { unstable_noStore as noStore } from "next/cache";
-
 import { getCabins } from "@/app/_lib/data-service";
 import CabinCard from "@/app/_components/CabinCard";
 
